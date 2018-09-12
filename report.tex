@@ -20,9 +20,13 @@
 \renewcommand\cfttabafterpnum{\vskip10pt\par}
 \usepackage[superscript,biblabel]{cite}
 \usepackage{tocloft,lipsum,pgffor,sectsty}
-
+\usepackage{sectsty}
 \setcounter{tocdepth}{4}% Include up to \subsubsection in ToC
 
+\sectionfont{\huge}
+\subsectionfont{\LARGE}
+\subsubsectionfont{\Large}
+\paragraphfont{\large}
 
 
 
@@ -375,122 +379,164 @@ For Users using our app as Deliverer:
 \item No more than one user who is using our app as Deliverer should Accept a single order at the same time.
 \end{itemize}
 
+\newline
 \section{Requirements}
 
 \subsection{Functional Requirements}
 
-\textbf{Module-1 :} User Login using E-mail \& Password \\
-AIM : User can login to our app using unique E-mail \& Password\\
-                    INPUT : E-mail and password.\\    
-                    OUTPUT :  Displays a message if username and password does not match otherwise enter into the Usage mode screen.\\
-                    PROCESS : Match username and password from database.\\
-\newline
-\textbf{Module-2 :} User Login using Google Sign-in\\
-                    AIM : User can login to our app using G-Mail ID.\\
-                    INPUT : G-Mail ID (E-mail and password).\\
-                    OUTPUT : enter into the Usage mode screen.\\
-                    PROCESS : Use GoogleApiClient.\\
-\newline
-\textbf{Module-3 :} Reset Password\\
-                    AIM : User can reset password using registered E-mail.\\					INPUT : Registered E-mail.\\
-                    OUTPUT : Password reset link sent to registered E-mail.\\
-                    PROCESS : Use Firebase Authentication functions.\\
-\newline
-\textbf{Module-4 :} Registration\\
-					AIM : A new user can register to our app by filling the form.\\				INPUT : Name, Mobile No., Alternate Mobile No.(optional), E-mail and password.\\
-					OUTPUT : E-mail verification link sent to given E-mail if E-mail valid otherwise asks to enter valid E-mail address.\\
-					PROCESS : Use Firebase Authentication functions.\\
-\newline
-\textbf{Module-5 :} Verify E-mail\\
-					AIM : User will follow the instructions given in link for E-mail verification to verify E-mail before using our app.\\
-					INPUT : Press Refresh Button\\
-                    OUTPUT : Enter into the Usage mode screen if E-mail verification successful else remain in E-mail verification screen.\\
-                    PROCESS : Save all data in database.\\
-\newline
-\textbf{Module-6 :} Re-send Verification E-mail\\
-					AIM : Re-send the E-mail verification link to entered E-mail while registering.\\
-					INPUT : Touch Re-send Verification Mail button.\\
-					OUTPUT : Verification E-mail sent to E-mail.\\
-					PROCESS : Use Firebase Authentication functions.\\
-\newline
-\textbf{Module-7 :} Place a new order\\
-					AIM : User can place a new order when using our app as Shopper by filling a form.\\
-INPUT : Description or order, Category, Estimated price range minimum and maximum values, Expiry Date and Time of order(optional) and delivery location.\\
-					OUTPUT : PayTM payment gateway if all details are valid else displays appropriate message.\\
-					PROCESS : Check maximum and minimum value and whether all mandatory fields are filled.\\
-\newline
-\textbf{Module-8 :} Order payment\\
-					AIM : Finish payment of the order by paying from PayTM wallet using PayTM payments SDK.\\
-					INPUT : PayTM login details.\\
-					OUTPUT : Order details added in Database and details updated in Database if payment successful else no change in database.\\
-					PROCESS : Save all data in database and send notification to shopper.\\
-\newline
-\textbf{Module-9 :} Edit pending order\\
-					AIM : User can edit an existing pending order when using our app as Shopper by filling a form.\\
-					INPUT : Description of order, Category, Estimated price range minimum value, Expiry Date and Time of order(optional) and delivery location.\\
-					OUTPUT : opens order view screen if all details are valid else displays appropriate message.\\
-                    PROCESS : Save all data in database.\\
-\newline
-\textbf{Module-10 :} Apply a filter\\
-					AIM : Displays the orders according to selected filters.\\
-					INPUT : Touch the filter option that you want to apply in the Navigation drawer of Shopper or Deliverer view.\\
-					OUTPUT : Recycler view containing cards of orders of chosen status only.\\
-					PROCESS : Database query to fetch orders from database of chosen status.\\
-\newline
-\textbf{Module-11 :} Sign-out\\
-					AIM : To Sign-out of the app.
-					\\INPUT : Touch Sign Out button in the Navigation drawer of Shopper or Deliverer view.\\
-					OUTPUT : Signs out of the app and displays the login screen.\\
-					PROCESS : Use Firebase Authentication functions.\\
-\newline
-\textbf{Module-12 :} View as Deliverer\\
-					AIM : Switch to Deliverer mode from the Shopper mode.\\
-					INPUT : Touch View as Deliverer button in the Navigation drawer of Shopper view.\\
-					OUTPUT : Opens the Deliverer view.\\
-					PROCESS : Call the intent for the Deliverer view.\\
-\newline
-\textbf{Module-13 :} View as Shopper\\
-					AIM : Switch to Shopper mode from the Deliverer mode.\\
-					INPUT : Touch View as Shopper button in the Navigation drawer of Deliverer view.\\
-					OUTPUT : Opens the Shopper view.\\
-					PROCESS : Call the intent for the Shopper view.\\
-\newline
-\textbf{Module-14 :} Show Path\\
-					AIM : Shows the path to delivery location of an order to the Deliverer using Google maps.\\
-					INPUT : touch Show Path button.\\
-					OUTPUT : Opens the path in Google maps.\\
-					PROCESS : Calls the Google maps app.\\
-\newline
-\textbf{Module-15 :} Accept an order\\
-					AIM : Accept a pending order.\\
-					INPUT : touch Accept button in Deliverer order detailed view.\\
-					OUTPUT : Enables Complete Order button.\\
-					PROCESS : Update details in database  and send notification to shopper.\\
-\newline
-\textbf{Module-16 :} Reject an order\\
-					AIM : Reject an accepted order.\\
-					INPUT : touch Reject button in Deliverer order detailed view.\\
-                    OUTPUT : Disables Complete Order button.\\
-                    PROCESS : Update details in database and send notification to shopper.\\
-\newline
-\textbf{Module-17 :} Complete an order\\
-					AIM : Complete the delivery of an accepted order.\\
-					INPUT : touch Complete Order button in Deliverer order detailed view.\\
-					OUTPUT : opens SENT OTP screen.\\
-					PROCESS : calls intent for SENT OTP screen.\\
-\newline
-\textbf{Module-18 :} Send OTP\\
-					AIM : Send OTP to the shopper from the deliverer.\\
-					INPUT : actual price of item bought.\\
-					OUTPUT : opens ENTER OTP screen.\\
-                    PROCESS : Update details in database and send notification to shopper.\\
-\newline
-\textbf{Module-18 :} Finish Order\\
-                    AIM : Finish the delivery of an order.
-INPUT : OTP as received from shopper.\\
-                    OUTPUT : Delivery finished if correct OTP entered otherwise displays message.\\
-                    PROCESS : Update details in database and send notification to shopper.\\
+\noindent \newline
+\textbf{Module-1 :} User Login using E-mail \& Password
+\begin{description}
+\item AIM : User can login to our app using unique E-mail \& Password
+\item INPUT : E-mail and password.    
+\item OUTPUT :  Displays a message if username and password does not match otherwise enter into the Usage mode screen.
+\item PROCESS : Match username and password from database.
+\end{description}
 
+\noindent \newline \textbf{Module-2 :} User Login using Google Sign-in
+\begin{description}
+\item AIM : User can login to our app using G-Mail ID.
+\item INPUT : G-Mail ID (E-mail and password).
+\item OUTPUT : enter into the Usage mode screen.
+\item PROCESS : Use GoogleApiClient.
+\end{description}
+
+\noindent \newline \textbf{Module-3 :} Reset Password
+\begin{description}
+\item AIM : User can reset password using registered E-mail.
+\item INPUT : Registered E-mail.
+\item OUTPUT : Password reset link sent to registered E-mail.
+\item PROCESS : Use Firebase Authentication functions.
+\end{description}
+
+\noindent \newline \textbf{Module-4 :} Registration
+\begin{description}
+\item AIM : A new user can register to our app by filling the form.
+\item INPUT : Name, Mobile No., Alternate Mobile No.(optional), E-mail and password.
+\item OUTPUT : E-mail verification link sent to given E-mail if E-mail valid otherwise asks to enter valid E-mail address.
+\item PROCESS : Use Firebase Authentication functions.
+\end{description}
+
+\noindent \newline \textbf{Module-5 :} Verify E-mail
+\begin{description}
+\item AIM : User will follow the instructions given in link for E-mail verification to verify E-mail before using our app.
+\item INPUT : Press Refresh Button.
+\item OUTPUT : Enter into the Usage mode screen if E-mail verification successful else remain in E-mail verification screen.
+\item PROCESS : Save all data in database.
+\end{description}
+
+\noindent \newline \textbf{Module-6 :} Re-send Verification E-mail
+\begin{description}
+\item AIM : Re-send the E-mail verification link to entered E-mail while registering.
+\item INPUT : Touch Re-send Verification Mail button.
+\item OUTPUT : Verification E-mail sent to E-mail.
+\item PROCESS : Use Firebase Authentication functions.
+\end{description}
+
+\noindent \newline {Module-7 :} Place a new order
+\begin{description}
+\item AIM : User can place a new order when using our app as Shopper by filling a form.
+\item INPUT : Description or order, Category, Estimated price range minimum and maximum values, Expiry Date and Time of order(optional) and delivery location.
+\item OUTPUT : PayTM payment gateway if all details are valid else displays appropriate message.
+\item PROCESS : Check maximum and minimum value and whether all mandatory fields are filled.
+\end{description}
+
+\noindent \newline \textbf{Module-8 :} Order payment
+\begin{description}
+\item AIM : Finish payment of the order by paying from PayTM wallet using PayTM payments SDK.
+\item INPUT : PayTM login details.
+\item OUTPUT : Order details added in Database and details updated in Database if payment successful else no change in database.
+\item PROCESS : Save all data in database and send notification to shopper.
+\end{description}
+
+
+\noindent \newline \textbf{Module-9 :} Edit pending order
+\begin{description}
+\item AIM : User can edit an existing pending order when using our app as Shopper by filling a form.
+\item INPUT : Description of order, Category, Estimated price range minimum value, Expiry Date and Time of order(optional) and delivery location.
+\item OUTPUT : opens order view screen if all details are valid else displays appropriate message.
+\item PROCESS : Save all data in database.
+\end{description}
+
+\noindent \newline \textbf{Module-10 :} Apply a filter
+\begin{description}
+\item AIM : Displays the orders according to selected filters.
+\item INPUT : Touch the filter option that you want to apply in the Navigation drawer of Shopper or Deliverer view.
+\item OUTPUT : Recycler view containing cards of orders of chosen status only.
+\item PROCESS : Database query to fetch orders from database of chosen status.
+\end{description}
+
+\noindent \newline \textbf{Module-11 :} Sign-out
+\begin{description}
+\item AIM : To Sign-out of the app.
+\item INPUT : Touch Sign Out button in the Navigation drawer of Shopper or Deliverer view.
+\item OUTPUT : Signs out of the app and displays the login screen.
+\item PROCESS : Use Firebase Authentication functions.
+\end{description}
+
+\noindent \newline \textbf{Module-12 :} View as Deliverer
+\begin{description}
+\item AIM : Switch to Deliverer mode from the Shopper mode.
+\item INPUT : Touch View as Deliverer button in the Navigation drawer of Shopper view.
+\item OUTPUT : Opens the Deliverer view.
+\item PROCESS : Call the intent for the Deliverer view.
+\end{description}
+
+\noindent \newline \textbf{Module-13 :} View as Shopper
+\begin{description}
+\item AIM : Switch to Shopper mode from the Deliverer mode.
+\item INPUT : Touch View as Shopper button in the Navigation drawer of Deliverer view.
+\item OUTPUT : Opens the Shopper view.
+\item PROCESS : Call the intent for the Shopper view.
+\end{description}
+
+\noindent \newline \textbf{Module-14 :} Show Path
+\begin{description}
+\item AIM : Shows the path to delivery location of an order to the Deliverer using Google maps.
+\item INPUT : touch Show Path button.
+\item OUTPUT : Opens the path in Google maps.
+\item PROCESS : Calls the Google maps app.
+\end{description}
+
+\noindent \newline \textbf{Module-15 :} Accept an order
+\begin{description}
+\item AIM : Accept a pending order.
+\item INPUT : touch Accept button in Deliverer order detailed view.
+\item OUTPUT : Enables Complete Order button.
+\item PROCESS : Update details in database  and send notification to shopper.
+\end{description}
+
+\noindent \newline \textbf{Module-16 :} Reject an order
+\begin{description}
+\item AIM : Reject an accepted order.
+\item INPUT : touch Reject button in Deliverer order detailed view.
+\item OUTPUT : Disables Complete Order button.
+\item PROCESS : Update details in database and send notification to shopper.
+\end{description}
+
+\noindent \newline \textbf{Module-17 :} Complete an order
+\begin{description}
+\item AIM : Complete the delivery of an accepted order.
+\item INPUT : touch Complete Order button in Deliverer order detailed view.
+\item OUTPUT : opens SENT OTP screen.
+\item PROCESS : calls intent for SENT OTP screen.
+\end{description}
+
+\noindent \newline \textbf{Module-18 :} Send OTP
+\begin{description}
+\item AIM : Send OTP to the shopper from the deliverer.
+\item INPUT : actual price of item bought.
+\item OUTPUT : opens ENTER OTP screen.
+\item PROCESS : Update details in database and send notification to shopper.
+\end{description}
+
+\noindent \newline \textbf{Module-19 :} Finish Order
+\begin{description}
+\item AIM : Finish the delivery of an order.
+INPUT : OTP as received from shopper.
+\item OUTPUT : Delivery finished if correct OTP entered otherwise displays message.
+\item PROCESS : Update details in database and send notification to shopper.
+\end{description}
 
 \subsection{Non- functional Requirements}
 
@@ -531,7 +577,7 @@ Any device with Android OS like mobile phone, tablet or fablet.
 \begin{itemize}[label=$\diamond$]
 \item Softwares :
 \begin{itemize}[label=$\rightarrow$]
-\item Android Studio : Development environment for Google's Android operating system.
+\item Android Studio : Development environment for Google\textquotesingle s Android operating system.
 \end{itemize}
 \item Languages :
 \begin{itemize}[label=$\rightarrow$]
@@ -638,8 +684,141 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \item E-mail \& Password
 \item Google Sign-in
 \end{itemize}
+\end{itemize}
+
+\subsection{Forgot Password Screen}
+\begin{itemize}
+\item If you ever forget your password, just enter your registered E-mail and the password reset instructions will be sent to that E-mail.
+\end{itemize}
+
+\subsection{New Registration Screen}
+\begin{itemize}
+\item This is the screen for registration for the E-mail \& Password method in our database.
+\end{itemize}
+
+\subsection{Choose Mode of Usage}
+\begin{itemize}
+\item This is the screen where you choose whether you want to act as a Shopper or as a Deliverer.
+\item The interface of both the modes is very similar.
+\end{itemize}
+
+\subsection{Shopper View}
+\begin{itemize}
+\item All of your orders will be displayed in this screen in the form of a Recycler View of cards where each card is used to show an order.
+\item The default filter shows all your Pending and Active orders on this screen.
+\item Each order is summarised in the form of a card in the Recycler view showing its Status, Category, Description, Maximum range price, Delivery Charge and the Expiry Date \& time.
+\item On the top left there is the toolbar menu button for displaying the Navigation Drawer.
+\item On the bottom right there is a PLUS Floating Action Button which is used for placing a new order.
+\end{itemize}
+
+\subsection{Shopper Order Detail View}
+\begin{itemize}
+\item Clicking an order in the Shopper View will open the detailed view of that order in a new activity.
+\item All the details of that order can be found here in this screen which also contains a nice Collapsing Toolbar Layout.
+\item There is also an EDIT floating Action Button on the top right of the screen using which we can edit the details of that order.
+\item When an order is accepted, the OTP will also be displayed in this screen and the details of the deliverer will also be shown.
+\end{itemize}
+
+\subsection{Shopper Navigation Drawer}
+\begin{itemize}
+\item Touching the top left toolbar Menu button opens the Navigation Drawer for the Shopper which can also be opened by sliding the screen from the left boundary of the mobile to a slight right.
+\item This Navigation Drawer shows your basic profile details along with your current PayTM wallet balance.
+\item There is the option to switch to the Deliverer View i.e. use the app as a Deliverer to deliver orders.
+\item We also have various filters for order display like All orders, Active, Pending, Finished, Cancelled and Expired orders. Touching any one of them results in the display of only those type of orders(if any) in the Recycler view.
+\item On the bottom of the Navigation Drawer is the option to Sign-Out of the app.
+\end{itemize}
+
+\subsection{Placing New Order}
+\begin{itemize}
+\item Touching the PLUS Floating Action Button on the bottom right on the Shopper View screen opens up the form for placing a new order.
+\item We need to give the order Description, its Category, an estimated price range.
+\item We can choose to give the expiry Date and Time for that order, expiration of after which that order will automatically be removed from the global pending orders list of Deliverers.
+\item We also need to set the delivery location for our order i.e the location where we want our order to be delivered. We are using Google Places API for doing this.
+\item We are storing this Delivery location in our database, so that it can be used by the deliverer to track the delivery location.
+\item Payment of the order is being done from the shopper’s PayTM wallet using PayTM payments SDK.
+\item After successful payment and placing of order, that order is added as a card in the Recycler view in the Shopper View screen with status as PENDING.
 
 \end{itemize}
+
+\subsection{Editing an Order}
+
+\begin{itemize}
+\item On touching the EDIT floating Action Button on the top right of the Shopper Order Detail View screen, an edit form will be opened for that order using which we can edit the details of that order.
+\end{itemize}
+
+\subsection{Deliverer View}
+\begin{itemize}
+\item This screen is just like the Shopper View but according to a Deliverer.
+\item You can only see the PENDING orders of the shoppers who are in the same city as yours.
+\item Along with pending orders of the shoppers of your city, the default filter shows all of your Active orders, i.e. the order which you have accepted to deliver.
+\item For Accepting an order from the pending orders, you have to open the order\textquotesingle s detailed view by touching the card for that order.
+\end{itemize}
+
+\subsection{Deliverer Navigation Drawer}
+\begin{itemize}
+\item Along with your basic profile information, wallet info. , filters and Sign-out option, here, the Navigation Drawer also displays your current location (city).
+\end{itemize}
+
+\subsection{Deliverer Order Detail View}
+\begin{itemize}
+\item It is similar to the Detailed order view of Shopper but according to a deliverer.
+\item There is a SHOW PATH button which shows the path from your current location to the delivery location of that order.
+\item When the order is pending, there is an ACCEPT button.
+\item When the order is ACCEPTED, there is a button to reject as well as a button to COMPLETE ORDER.
+\end{itemize}
+
+\subsection{Accept an Order}
+\begin{itemize}
+\item A deliverer can Accept a pending order by touching the ACCEPT button in the detailed view of that order.
+\end{itemize}
+
+\subsection{Complete Order}
+\begin{itemize}
+\item By touching the COMPLETE ORDER button, we start the process of completing the order.
+\item First a screen is displayed which asks the deliverer to enter the Actual price paid to buy the order, after filling the price, the SEND OTP button is activated, using which an OTP along with the price as filled by the deliverer is sent to the respective shopper of that order in the form  of a notification.
+\item Then, a new screen is displayed to the deliverer, asking to enter the OTP as received from the shopper.
+\item The OTP is working as a confirmation from the shopper. So, a shopper will give the OTP to the deliverer only when he/she is satisfied with the price and quality of the delivery.
+\item After entering the correct OTP by the deliverer, the delivery of that order is considered to be finished.
+\end{itemize}
+%----------------------------------------------------------------
+
+\chapter{Technology used}
+
+\begin{itemize}[label=$\diamond$]
+\item Softwares :
+\begin{itemize}[label=$\rightarrow$]
+\item Android Studio : Development environment for Google\textquotesingle s Android operating system.
+\end{itemize}
+\item Languages :
+\begin{itemize}[label=$\rightarrow$]
+\item For Front-end : XML(eXtensible Markup Language) and Android(Java)
+\item For Back-end : Java
+\end{itemize}
+
+\item Tools / Libraries:
+\begin{itemize}[label=$\rightarrow$]
+\item Google Sign-in
+\item E-mail verification (using Firebase Authentication)
+\item Google Places API
+\item Google Maps
+\item Location
+\item PayTM payments SDK
+\item OneSignal API (for Notifications)
+\item Lucidchart.com (for diagrams)
+\end{itemize}
+
+\item Databases :
+\begin{itemize}[label=$\rightarrow$]
+\item Google Firebase (NoSQL Real-time cloud-hosted Database) :
+\begin{enumerate}
+\item Data is synced across all clients in realtime, and remains available when your app goes offline.
+\item Data is stored as JSON (JavaScript Object Notation) tree.
+\end{enumerate}
+\end{itemize}
+
+\end{itemize}
+
+
 
 %---------------------------------------------
 \chapter{Business Model}
