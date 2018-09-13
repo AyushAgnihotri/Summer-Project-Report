@@ -88,10 +88,10 @@
 
 
 
-\titlespacing{\chapter}{0cm}{20pt}{20pt}
-\titlespacing{\section}{0cm}{20pt}{0.5cm}
-\titlespacing{\subsection}{0cm}{20pt}{0.5cm}
-\titlespacing{\subsubsection}{0cm}{20pt}{0.5cm}
+\titlespacing{\chapter}{0cm}{0pt}{10pt}
+\titlespacing{\section}{0cm}{10pt}{0.25cm}
+\titlespacing{\subsection}{0cm}{10pt}{0.25cm}
+\titlespacing{\subsubsection}{0cm}{10pt}{0.25cm}
 
 
 
@@ -155,7 +155,7 @@
 	\vspace{0.1\textheight}
 		
 	\textcolor{Red}{ 
-		{\fontsize{35}{42}\selectfont Social Delivery}\\[0.5\baselineskip]
+		{\fontsize{35}{42}\selectfont Social Delivery : \\ An Android Application}\\[0.5\baselineskip]
 	}
 	
 	\vspace{0.185\textheight} 
@@ -250,14 +250,22 @@
 \setlength{\columnsep}{0.7cm}
 \pagenumbering{arabic}
 %\begin{multicols}{1}
-\chapter{Abstract}
-\par \Large \textit { }
 
 %---------------------------------------------------------------------
 
 \chapter{Introduction and Motivation}
 
-\par \Large The world is getting flooded by textual data everyday. It is very important to extract infromation from this data for better understanding of
+\par \Large Online Shopping is growing at a fast pace. People prefer shopping for products online rather than offline. However, when you need to buy things from local markets less options are available. Normally, people go to shops or send somebody to buy goods for them. They may also ask someone who is going to market to buy things for them. 
+
+We have tried to provide a solution to above problem by developing an android application. With this application we aim to automate the process of communication between potential deliverers and shoppers.
+
+
+People go for shopping, at the same time their friends and other people may also want to buy things from same or nearby markets. These People going for shopping can help their friends. They will also get some incentive in terms of delivery charge without much effort.
+
+We aim to provide an efficient way to manage the shopping needs of people from local markets. Any user using our app is free to use it as a shopper or deliverer. Sometimes you can be a shopper and at other times you can be a deliverer. Shoppers are driven by their shopping needs and deliverers are motivated to use our app for incentive they get in return of their service.  
+
+We named this application as `\textbf{Social Delivery}', Since,  it creates a social shopping environment . 
+
 
 %---------------------------------------------------------------------------------------------------
 
@@ -651,7 +659,6 @@ Example of few such use cases :-
 %--------------------------------------------------------------------------
 
 \chapter{Application Design}
-\section{Software Architecture}
 
 \section{UI Design}
 We have made an android application which helps people shop from local stores. Using our application you can order any goods or food items and it will be delivered to you by one of our deliverer.\\
@@ -697,24 +704,26 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \end{itemize}
 
 \begin{figure}[h!]
-\begin{subfigure}[b]{.3\textwidth}
+\begin{subfigure}[b]{.26\textwidth}
 \centering
-\includegraphics[width=5cm]{login.jpg}
-\caption{\centering \tiny Login screen}
+\includegraphics[width=4.2cm]{login.jpg}
+\caption{\centering \tiny Login screen using E-Mail \& Password}
 \end{subfigure}
-\begin{subfigure}[b]{.3\textwidth}
+\begin{subfigure}[b]{.26\textwidth}
 \centering
-\includegraphics[width=5cm]{google_signin.jpg}
-\caption{\centering \tiny Forgot password screen }
+\includegraphics[width=4.2cm]{google_signin.jpg}
+\caption{\centering \tiny Reset Password screen}
 \end{subfigure}
-\begin{subfigure}[b]{.3\textwidth}
+\begin{subfigure}[b]{.26\textwidth}
 \centering
-\includegraphics[width=5cm]{forgot_password.jpg}
-\caption{\centering \tiny Signup screen }
+\includegraphics[width=4.2cm]{forgot_password.jpg}
+\caption{\centering \tiny Forgot password screen}
 \end{subfigure}
+\caption{\tiny Login Screen and Password Reset} 
+\label{fig:NASA_Logo}
 \end{figure}
 
-
+\pagebreak
 
 \subsection{Forgot Password Screen}
 \begin{itemize}
@@ -732,13 +741,15 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{signup.jpg}
-\caption{\centering \tiny Login screen}
+\caption{\centering \tiny User Registration form}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{verify_email.jpg}
-\caption{\centering \tiny Forgot password screen }
+\caption{\centering \tiny E-Mail verification Mail}
 \end{subfigure}
+\caption{\tiny Registration screen and E-Mail verification mail} 
+\label{fig:NASA_Logo}
 \end{figure}
 
 
@@ -763,18 +774,20 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{main_screen.jpg}
-\caption{\centering \tiny Login screen}
+\caption{\centering \tiny Usage mode screen}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{location_permission.jpg}
-\caption{\centering \tiny Login screen}
+\caption{\centering \tiny GPS Location permission}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{shopper_view.jpg}
-\caption{\centering \tiny Signup screen }
+\caption{\centering \tiny Shopper view showing Active \& Pending orders}
 \end{subfigure}
+\caption{\tiny Usage mode screen and Shopper view screen} 
+\label{fig:NASA_Logo}
 \end{figure}
 
 
@@ -810,8 +823,10 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{shopper_drawer.jpg}
-\caption{\centering \tiny Shopper navigation  }
+\caption{\centering \tiny Shopper Navigation}
 \end{subfigure}
+\caption{\tiny Shopper order Detail view and Shopper Navigation drawer} 
+\label{fig:NASA_Logo}
 \end{figure}
 
 
@@ -831,36 +846,36 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{empty_form.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny New Order form}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{categories.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny Choosing the Category for order}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{place_picker.jpg}
-\caption{\centering \tiny Shopper navigation  }
+\caption{\centering \tiny Setting the delivery location for order}
 \end{subfigure}
-\end{figure}
 
-\begin{figure}[h!]
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{place.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny COnfirming the delivery location for order}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{filled_form.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny Filled form}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{pay.jpg}
-\caption{\centering \tiny Shopper navigation  }
+\caption{\centering \tiny Order Price display using Bottomsheet}
 \end{subfigure}
+\caption{\tiny Placing new order} 
+\label{fig:NASA_Logo}
 \end{figure}
 
 
@@ -868,31 +883,31 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{paytm_start.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny Login to Paytm to pay}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{mobile_number.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny Enter the staging mobile no.}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{paytm_otp.jpg}
-\caption{\centering \tiny Shopper navigation  }
+\caption{\centering \tiny Enter the staging OTP}
 \end{subfigure}
-\end{figure}
 
-\begin{figure}[h!]
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{paytm_pay.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny Paying for the order using Paytm wallet}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{edit_order.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering \tiny Edit order form}
 \end{subfigure}
+\caption{\tiny Payment of order and Editing of order} 
+\label{fig:NASA_Logo}
 \end{figure}
 \pagebreak
 \pagebreak
@@ -916,17 +931,30 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \end{itemize}
 
 \begin{figure}[h!]
-\begin{subfigure}[h!]{.3\textwidth}
+\begin{subfigure}[h!]{.24\textwidth}
 \centering
-\includegraphics[width=5cm]{deliverer_view.jpg}
-\caption{\centering \tiny Order detail view}
+\includegraphics[width=4cm]{deliverer_view.jpg}
+\caption{\centering \tiny Deliverer order view}
 \end{subfigure}
-\begin{subfigure}[h!]{.3\textwidth}
+\begin{subfigure}[h!]{.24\textwidth}
 \centering
-\includegraphics[width=5cm]{deliverer_drawer.jpg}
-\caption{\centering \tiny Order detail view}
+\includegraphics[width=4cm]{deliverer_drawer.jpg}
+\caption{\centering \tiny Deliverer Navigation drawer}
 \end{subfigure}
+\begin{subfigure}[h!]{.24\textwidth}
+\centering
+\includegraphics[width=4cm]{pending_orders.jpg}
+\caption{\centering \tiny Pending orders}
+\end{subfigure}
+\begin{subfigure}[h!]{.24\textwidth}
+\centering
+\includegraphics[width=4cm]{finished_deliverer.jpg}
+\caption{\centering \tiny Finished orders}
+\end{subfigure}
+\caption{\tiny Deliverer view} 
+\label{fig:NASA_Logo}
 \end{figure}
+
 
 \subsection{Deliverer Order Detail View}
 \begin{itemize}
@@ -942,21 +970,28 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \end{itemize}
 
 \begin{figure}[h!]
-\begin{subfigure}[h!]{.3\textwidth}
+\begin{subfigure}[h!]{.24\textwidth}
 \centering
-\includegraphics[width=5cm]{paytm_start.jpg}
-\caption{\centering \tiny Order detail view}
+\includegraphics[width=4cm]{deliverer_order_detail1.jpg}
+\caption{\centering \tiny Deliverer Order detail view}
 \end{subfigure}
-\begin{subfigure}[h!]{.3\textwidth}
+\begin{subfigure}[h!]{.24\textwidth}
 \centering
-\includegraphics[width=5cm]{mobile_number.jpg}
-\caption{\centering \tiny Order detail view}
+\includegraphics[width=4cm]{deliverer_order_detail2.jpg}
+\caption{\centering \tiny Deliverer Order detail view}
 \end{subfigure}
-\begin{subfigure}[h!]{.3\textwidth}
+\begin{subfigure}[h!]{.24\textwidth}
 \centering
-\includegraphics[width=5cm]{paytm_otp.jpg}
-\caption{\centering \tiny Shopper navigation  }
+\includegraphics[width=4cm]{show_path.jpg}
+\caption{\centering \tiny Show Path functionality using Google Maps}
 \end{subfigure}
+\begin{subfigure}[h!]{.24\textwidth}
+\centering
+\includegraphics[width=4cm]{order_accepted.jpg}
+\caption{\centering \tiny Accepting an order by touching the Accept button}
+\end{subfigure}
+\caption{\tiny Accepting an order} 
+\label{fig:NASA_Logo}
 \end{figure}
 
 
@@ -968,6 +1003,27 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \item The OTP is working as a confirmation from the shopper. So, a shopper will give the OTP to the deliverer only when he/she is satisfied with the price and quality of the delivery.
 \item After entering the correct OTP by the deliverer, the delivery of that order is considered to be finished.
 \end{itemize}
+
+\begin{figure}[h!]
+\begin{subfigure}[h!]{.3\textwidth}
+\centering
+\includegraphics[width=5cm]{send_otp.jpg}
+\caption{\centering \tiny Sending OTP to Shopper after entering the Actual price of order}
+\end{subfigure}
+\begin{subfigure}[h!]{.3\textwidth}
+\centering
+\includegraphics[width=5cm]{mark_delivered.jpg}
+\caption{\centering \tiny Entering the OTP as received from Shopper to finish Delivery}
+\end{subfigure}
+\begin{subfigure}[h!]{.3\textwidth}
+\centering
+\includegraphics[width=5cm]{delivery_finished.jpg}
+\caption{\centering \tiny Message confirming the Finishing of Delivery of order}
+\end{subfigure}
+\caption{\tiny Completing the Delivery of an order} 
+\label{fig:NASA_Logo}
+\end{figure}
+
 %----------------------------------------------------------------
 
 \chapter{Technology used}
