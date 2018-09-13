@@ -20,7 +20,6 @@
 \renewcommand\cfttabafterpnum{\vskip10pt\par}
 \usepackage[superscript,biblabel]{cite}
 \usepackage{tocloft,lipsum,pgffor,sectsty}
-\usepackage{sectsty}
 \setcounter{tocdepth}{4}% Include up to \subsubsection in ToC
 
 \sectionfont{\huge}
@@ -47,12 +46,10 @@
 \usepackage{enumitem}
 \usepackage{chngcntr}
 \usepackage[svgnames]{xcolor}
-\usepackage{pgfplotstable}
 \usepackage{pgfplotstable,booktabs}
 \usepackage{csvsimple}
 \usepackage{multicol}
 \usepackage[pdfpagemode=FullScreen, colorlinks=true]{hyperref} 
-\usepackage{hyperref}
 \hypersetup{%
   colorlinks = false,
   linkcolor  = black
@@ -65,8 +62,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{fouriernc}
 \usepackage[utf8]{inputenc}
-\usepackage{titlesec}
-%\usepackage{etoolbox}
+\usepackage{etoolbox}
 %\makeatletter
 %\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
 %\patchcmd{\ttlh@hang}{\noindent}{}{}{}
@@ -76,13 +72,28 @@
 \captionsetup[table]{skip=20pt}
 \captionsetup[figure]{skip=20pt}
 \usepackage[tablename=Table - ]{caption}
-
+\setcounter{secnumdepth}{4}
 
 \usepackage{setspace}
-
+%FOR ADDING numbering in chapter, sections etc.
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
-  {\normalfont\Huge\bfseries}{}{0pt}{}
+  {\normalfont\Huge\bfseries}{}{0pt}{\Huge\ifnum\value{chapter}>0\relax\arabic{chapter}.~\fi\ \ }
+ \titleformat{\section}[display]
+  {\normalfont\Huge\bfseries}{}{0pt}{\LARGE\thechapter.\ifnum\value{section}>0\relax\arabic{section}.~\fi\quad}
+  \titleformat{\subsection}[display]
+  {\normalfont\Huge\bfseries}{}{0pt}{\Large\thesection.\ifnum\value{subsection}>0\relax\arabic{subsection}.~\fi\quad}
+  \titleformat{\subsubsection}[display]
+  {\normalfont\Huge\bfseries}{}{0pt}{\large\thesubsection.\ifnum\value{subsubsection}>0\relax\arabic{subsubsection}.~\fi\quad}
+
+
+
+\titlespacing{\chapter}{0cm}{20pt}{20pt}
+\titlespacing{\section}{0cm}{20pt}{0.5cm}
+\titlespacing{\subsection}{0cm}{20pt}{0.5cm}
+\titlespacing{\subsubsection}{0cm}{20pt}{0.5cm}
+
+
 
 \usepackage{geometry}
  \geometry{
@@ -102,7 +113,7 @@
 %
 %\titlecontents{section}[1.6em]{\bigskip}%
 %{\thecontentslabel.\enspace}%numbered
-{}%numberless
+%{}%numberless
 %{\titlerule*[1pc]{.}\contentspage}%
 
 \setcounter{tocdepth}{6}
@@ -124,7 +135,7 @@
 \setlength{\columnsep}{0cm}
 
 
-\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+%\titlespacing*{\chapter}{0pt}{0pt}{20pt}
 
 \renewcommand{\bibname}{References}
 
@@ -922,8 +933,46 @@ These all type of orders can be accessed via filters in navigation bar.
 
 \chapter{About Database}
 
+\begin{itemize}
+\item We are using Google Firebase Database which is a NoSQL Real-time cloud-hosted Database.
+\item As our app is quite real-time (order status might change anytime) we needed the properties of a real-time database.
+\item Real-time syncing makes it easy for our users to access their data from any device. Real-time Database also helps your users collaborate with one another as data is synced across all clients in real-time, and remains available when our app goes offline.
+\item All the database queries like reading and writing data are fully asynchronous. This means that the call always returns immediately, without blocking the code to wait for a result. The results come some time later, whenever they’re ready, this results in overall faster response time for our app. Also asynchronous tasks run on parallel threads which make use of multiprocessing power of our device.
+\item If queries were synchronous , it will hold on the app till the result is obtained . This may lead to crashes and freezes in user interface .   
+\end{itemize}
+
+\section{NoSQL v.s SQL database}
+\begin{itemize}
+\item NoSQL databases were created to overcome the limitations of relational database technology.
+\item NoSQL databases are more flexible, scalable and also superior in the performance when compared to relational databases.
+\item NoSQL helps to store information without doing up‐front schema design.
+\item NoSQL data model has fewer restrictions and easily allow new changes without creating much fuss.
+\item NoSQL is cost effective compared to RDBMS and allows to process and store more data at a much lower cost because RDBMS rely on overpriced storage and proprietary server systems while NoSQL databases commonly rely on clusters of cheap commodity servers.
+\end{itemize}
+
+\section{Cloud-hosted vs Local server}
+\begin{itemize}
+\item The application will run 24x7 if internet connection is available.
+\item Data is synced across all clients in real time, and remains available when our app goes offline.
+\item As we are using third-party (Google Firebase) as our cloud hosting provider, we do not need to worry about security and  where the data is stored. 
+\item Whereas in local server we would have to maintain it fully and ensure that the server is available 24x7.
+\end{itemize}
 
 
+\section{Database Structure}
+All the data is stored as JSON (JavaScript Object Notation) tree.
+\begin{itemize}
+\item JSON is preferred over XML as the primary data format for transmitting back data, because it is much more lightweight.
+\item It is easy for humans to read and write. 
+\item It is easy for machines to parse and generate.
+\item It is a text format that is completely language independent.\\
+\end{itemize}
+
+JSON is built on two universal data structures:
+\begin{itemize}
+\item A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+\item An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+\end{itemize}
 %---------------------------------------------------------------------------------------------------
 \begin{comment}
 \chapter{Future Work}
