@@ -18,7 +18,9 @@
 \setlength\cftbeforechapskip{100pt}
 \renewcommand\cftfigafterpnum{\vskip10pt\par}
 \renewcommand\cfttabafterpnum{\vskip10pt\par}
-\usepackage[superscript,biblabel]{cite}
+%\usepackage[superscript,biblabel]{cite}
+\usepackage[superscript]{cite}
+
 \usepackage{tocloft,lipsum,pgffor,sectsty}
 \setcounter{tocdepth}{4}% Include up to \subsubsection in ToC
 
@@ -89,10 +91,9 @@
 
 
 \titlespacing{\chapter}{0cm}{0pt}{10pt}
-\titlespacing{\section}{0cm}{10pt}{0.25cm}
-\titlespacing{\subsection}{0cm}{10pt}{0.25cm}
-\titlespacing{\subsubsection}{0cm}{10pt}{0.25cm}
-
+\titlespacing{\section}{0cm}{0pt}{0.2cm}
+\titlespacing{\subsection}{0cm}{0pt}{0.2cm}
+\titlespacing{\subsubsection}{0cm}{0pt}{0.2cm}
 
 
 \usepackage{geometry}
@@ -152,43 +153,43 @@
 	\rule{\textwidth}{2pt}	
 	%\vspace{2pt}\vspace{-\baselineskip}
 	%\rule{\textwidth}{0.4pt}
-	\vspace{0.1\textheight}
+	\vspace{0.15\textheight}
 		
 	\textcolor{Red}{ 
-		{\fontsize{35}{42}\selectfont Social Delivery : \\ An Android Application}\\[0.5\baselineskip]
+		{\fontsize{35}{52}\selectfont Social Delivery : \\[8pt] An Android Application}\\[0.5\baselineskip]
 	}
 	
-	\vspace{0.185\textheight} 
-	
+	\vspace{0.15\textheight} 
+	\setlength\columnsep{0pt}
 	\rule{0.3\textwidth}{0.4pt} 
 	\begin{multicols}{3} 
 	\textcolor{Blue}{
 		\begin{flushleft} 
-		{\large Ayush Agnihotri}\\[5pt] 
-		{\large Nidheesh Pandey}\\[5pt]
-		{\large Abhishek Pasi}\\[5pt]
+		{\large \quad \quad \quad \quad Ayush Agnihotri}\\[8pt] 
+		{\large \quad \quad \quad \quad Nidheesh Pandey}\\[8pt]
+		{\large \quad \quad \quad \quad Abhishek Pasi}\\[8pt]
 		\end{flushleft}
 		}
 		\columnbreak
 		 
 	\textcolor{Blue}{
 		\begin{flushleft} 
-		{\large IIM2015004}\\[5pt] 
-		{\large IIM2015501}\\[5pt]
-		{\large ICM2015002}\\[5pt]
+		{\large IIM2015004}\\[8pt] 
+		{\large IIM2015501}\\[8pt]
+		{\large ICM2015002}\\[8pt]
 		\end{flushleft}
 		}
 		\columnbreak
 
 	\textcolor{Green}{
 		\begin{flushright}
-		{\Large \textsc{Under supervision}}\\
-		{\large of}\\
-		{\Large \textsc{\textbf{Dr. Jagpreet Singh}}}
+		{\Large \textsc{Under supervision}}\\[8pt]
+		{\large of}\\[8pt]
+		{\Large \textsc{\textbf{Dr. Jagpreet Singh}}}\\[8pt]
 		\end{flushright}
 		}
 	\end{multicols}
-	\vspace{0.065\textheight} 
+	\vspace{0.015\textheight} 
 	
 \hfill
 
@@ -209,7 +210,7 @@
 \begin{spacing}{0.3}
 \fontsize{17}{68}\selectfont\linespread{10} {We hereby declare that the work presented in this project report entitled \textbf{``Social Delivery''},  submitted towards progress of summer project report of Dual Degree(IT) at \textbf{Indian Institute of Information Technology, Allahabad}, is an authenticated record of our original work carried out from \textbf{May 2018} to \textbf{present} under the guidance of \textbf{Dr. Jagpreet Singh}. Due acknowledgements have been made in the text to all other material used. The project was done in full compliance with the requirements and constraints of the prescribed curriculum.}
 \end{spacing}
-\vspace{5cm}
+\vspace{3cm}
 \Large
 \noindent \textbf{Signature Of Supervisor:}\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
@@ -238,13 +239,13 @@
 \pagebreak
 \listoffigures % Prints the list of figures
 \pagebreak
-\listoftables % Prints the list of tables
-\pagebreak
+%\listoftables % Prints the list of tables
+%\pagebreak
 
 }
 
 %-----------------------------------------------------------------------------------------
-\title{\Huge  Social Delivery\linebreak}
+\title{\fontsize{45}{66.6}\selectfont  Social Delivery\linebreak}
 \date{}
 \maketitle
 \setlength{\columnsep}{0.7cm}
@@ -254,49 +255,46 @@
 %---------------------------------------------------------------------
 
 \chapter{Introduction and Motivation}
+\bigskip
+\bigskip
+\par \Large Online Shopping is growing at a fast pace. People prefer shopping for products online rather than offline. However, when you need to buy things from local markets less options are available. Normally, people go to shops or send somebody to buy goods for them. They may also ask someone who is going to market to buy things for them.\\
 
-\par \Large Online Shopping is growing at a fast pace. People prefer shopping for products online rather than offline. However, when you need to buy things from local markets less options are available. Normally, people go to shops or send somebody to buy goods for them. They may also ask someone who is going to market to buy things for them. 
-
-We have tried to provide a solution to above problem by developing an android application. With this application we aim to automate the process of communication between potential deliverers and shoppers.
+We have tried to provide a solution to above problem by developing an android application. With this application we aim to automate the process of communication between potential deliverers and shoppers.\\
 
 
-People go for shopping, at the same time their friends and other people may also want to buy things from same or nearby markets. These People going for shopping can help their friends. They will also get some incentive in terms of delivery charge without much effort.
+People go for shopping, at the same time their friends and other people may also want to buy things from same or nearby markets. These people going for shopping can help their friends. They will also get some incentive in terms of delivery charge without much effort.\\
 
-We aim to provide an efficient way to manage the shopping needs of people from local markets. Any user using our app is free to use it as a shopper or deliverer. Sometimes you can be a shopper and at other times you can be a deliverer. Shoppers are driven by their shopping needs and deliverers are motivated to use our app for incentive they get in return of their service.  
+We aim to provide an efficient way to manage the shopping needs of people from local markets. Any user using our app is free to use it as a shopper or deliverer. Sometimes you can be a shopper and at other times you can be a deliverer. Shoppers are driven by their shopping needs and deliverers are motivated to use our app for incentive they get in return of their service.\\  
 
-We named this application as `\textbf{Social Delivery}', Since,  it creates a social shopping environment . 
+We named this application as `\textbf{Social Delivery}', Since,  it creates a social shopping environment . \\
 
 
 %---------------------------------------------------------------------------------------------------
 
 \chapter{Related work}
-\par As you already know,  we have made an android application which helps people shop from local shops, it will be helpful to discuss what work has been already done in this space.
+\bigskip
+\bigskip
+\par As you already know,  we have made an android application which helps people shop from local shops, it will be helpful to discuss what work has been already done in this space.\\
 
 \par Let\textquotesingle s have a look at the local shopping market space. While amazon is leader in online shopping and e-commerce, it has also entered into grocery delivering area. Ever heard of Google selling groceries and small daily use items? Yes it is true, Google which is one of the biggest technology company has also entered into this space with its
-\textbf{Google express}. From what we have seen it has partnered  with various big store chains like walmart and offers free delivery over a certain cost. Although, it is not available in India as of now.
+\textbf{Google express\cite{c7}}. From what we have seen it has partnered  with various big store chains like walmart and offers free delivery over a certain cost. Although, it is not available in India as of now.\\
 
-\par Taxi booking apps are also taking a step in local delivery space. Uber experimented with \textbf{UberFresh} in the past (2014). Now it has successfully launched \textbf{UberEats}, which serves worldwide.  It aims to deliver fast food from local restaurant chains in about 10 minutes or less. We already know Zomato, Swiggy and Foodpanda are working in this area, but taxi services entering in this area is totally a new thing. Ola has acquired foodpanda and aims to do the same things as UberEats.
-Gett is another taxi app which brings items from shops and restaurants , it has joined hands with WunWun , a delivery app to facilitate the same. It delivers every product you can buy from a local shop. 
+\par Taxi booking apps are also taking a step in local delivery space. Uber experimented with \textbf{UberFresh\cite{c1}} in the past (2014). Now it has successfully launched \textbf{UberEats\cite{c3}}, which serves worldwide.  It aims to deliver fast food from local restaurant chains in about 10 minutes or less. We already know Zomato, Swiggy and Foodpanda are working in this area, but taxi services entering in this area is totally a new thing. Ola has acquired foodpanda and aims to do the same things as UberEats.\\
+Gett is another taxi app which brings items from shops and restaurants , it has joined hands with WunWun , a delivery app to facilitate the same. It delivers every product you can buy from a local shop. \\
 
-\par Taxi companies are competing with big players like amazon and google . Although google is new in this space , being a tech giant , it has plenty of resources. Apart from that they have are giving major competition to delivery startups like Postmates , DoorDash and Instacart. We will talk about these startups in brief.
+\par Taxi companies are competing with big players like amazon and google . Although google is new in this space , being a tech giant , it has plenty of resources. Apart from that they have are giving major competition to delivery startups like Postmates\cite{c10} , DoorDash\cite{c5} and Instacart\cite{c4}. We will talk about these startups in brief.\\
 
-An important point to note is, these type of local delivery services are currently not available in India. However, food delivery services like zomato , swiggy and foodpanda are quite popular.
+An important point to note is, these type of local delivery services are currently not available in India. However, food delivery services like zomato , swiggy and foodpanda are quite popular.\\
 Now coming to services which have quite a resemblance with our application.
-Local delivery startups like Instacart, DoorDash and  Postmates are getting quite popular in the US.
+Local delivery startups like Instacart\cite{c4}, DoorDash\cite{c5} and  Postmates are getting quite popular in the US.\\
 
-Postmates works with both stores and restaurants to provide services to its customers. Currently it serves 14 cities across the US. An order placed by a user ,  is purchased and delivered by a local courier which they call “hipster on wheels” . It closely resembles what we have implemented in our android application. 
+Postmates works with both stores and restaurants to provide services to its customers. Currently it serves 14 cities across the US. An order placed by a user ,  is purchased and delivered by a local courier which they call “hipster on wheels” . It closely resembles what we have implemented in our android application. \\
 
-Instacart, it focuses more on grocery shopping. It sends a local shopper to a grocery store you wanted to shop from, goods are delivered within an hour.
+Instacart\cite{c4}, it focuses more on grocery shopping. It sends a local shopper to a grocery store you wanted to shop from, goods are delivered within an hour.\\
 
-DoorDash helps in doing local delivery from restaurants . It takes about 45 minutes and serves areas in Silicon Valley , Los Angeles , Boston and Chicago.
+DoorDash\cite{c5} helps in doing local delivery from restaurants . It takes about 45 minutes and serves areas in Silicon Valley , Los Angeles , Boston and Chicago.\\
 
-Our application is quite simple and works on more or less on the same concepts described in this section. However , there are some key differences in our design and working style of application.
-
-\begin{comment}
-\begin{enumerate}[label=\alph*).]
-
-\end{enumerate}
-\end{comment}
+Our application is quite simple and works on more or less on the same concepts described in this section. However, there are some key differences in our design and working style of application.\\
 
 %------------------------------------------------------------------------------------------------------------------
 
@@ -322,10 +320,10 @@ Both sections of the document describe the same software product in its entirety
 
 \begin{itemize}[label=$\circ$]
 \item This app is an Android based application designed on \textbf{Android Studio} platform.
-\item It uses \textbf{Google Firebase} Database which is a NoSQL Real-time cloud-hosted Database. We store the profiles of all users and all the data of the orders placed by them in a JSON tree. 
-\item It uses \textbf{Google Places API} to set the delivery location of an order and \textbf{Google maps} to help the Deliverers to reach the delivery location by showing them the path. 
+\item It uses \textbf{Google Firebase\cite{c9}} Database which is a NoSQL Real-time cloud-hosted Database. We store the profiles of all users and all the data of the orders placed by them in a JSON tree. 
+\item It uses \textbf{Google Places API} to set the delivery location of an order and \textbf{Google maps\cite{c2}} to help the Deliverers to reach the delivery location by showing them the path. 
 \item Our app also uses \textbf{GPS Location} to find the current city of the user. 
-\item Notification alerts are also sent to users on every status change of their orders using the \textbf{One Signal API}. The One Signal API  is an open source service which uses \textbf{Google Cloud Messaging(GCM)} in its backend.
+\item Notification alerts are also sent to users on every status change of their orders using the \textbf{One Signal API\cite{c16}}. The One Signal API  is an open source service which uses \textbf{Google Cloud Messaging(GCM)\cite{c11}} in its backend.
 \end{itemize}
 
 \subsection{Product features}
@@ -411,7 +409,7 @@ For Users using our app as Deliverer:
 \item PROCESS : Match username and password from database.
 \end{description}
 
-\noindent \newline \textbf{Module-2 :} User Login using Google Sign-in
+\noindent \newline \textbf{Module-2 :} User Login using Google Sign-in\cite{c15}
 \begin{description}
 \item AIM : User can login to our app using G-Mail ID.
 \item INPUT : G-Mail ID (E-mail and password).
@@ -487,7 +485,7 @@ For Users using our app as Deliverer:
 \noindent \newline \textbf{Module-11 :} Sign-out
 \begin{description}
 \item AIM : To Sign-out of the app.
-\item INPUT : Touch Sign Out button in the Navigation drawer of Shopper or Deliverer view.
+\item INPUT : Touch Sign Out button in the Navigation drawer\cite{c13} of Shopper or Deliverer view.
 \item OUTPUT : Signs out of the app and displays the login screen.
 \item PROCESS : Use Firebase Authentication functions.
 \end{description}
@@ -610,9 +608,9 @@ Any device with Android OS like mobile phone, tablet or fablet.
 \item Google Places API
 \item Google Maps
 \item Location
-\item PayTM payments SDK
+\item PayTM payments SDK\cite{c17}
 \item OneSignal API (for Notifications)
-\item Lucidchart.com (for diagrams)
+\item Lucidchart.com\cite{c12} (for diagrams)
 \end{itemize}
 
 \item Databases :
@@ -656,6 +654,20 @@ Example of few such use cases :-
 \item Having listing of shops and using the application to buy goods from shops.
 \item Partnering with restaurants for booking tables or ordering food items from their menu.
 \end{enumerate}
+
+\section{Diagrams}
+\begin{figure}[h!]
+\includegraphics[width=16cm]{OrdererUseCase.png}
+\caption{Use case diagram with shopper as an actor in our app}
+\label{fig:NASA_Logo}
+\end{figure}
+
+\begin{figure}[h!]
+\includegraphics[width=16cm]{DelivererUseCase.png}
+\caption{Use case diagram with deliverer as primary actor in our app}
+\label{fig:NASA_Logo}
+\end{figure}
+
 %--------------------------------------------------------------------------
 
 \chapter{Application Design}
@@ -685,8 +697,8 @@ We solved these problems by choosing a different User interface:\\
 The new operations are like follows:\\
 For placing a new order:
 \begin{itemize}
-\item Instead of using a map and choosing a deliverer at the time of placing the order, we created a list of all pending orders, just like unread mails in \textbf{google mail}. This method also reduces our dependency on google apis which are costly.
-\item We also have filters for pending , active , cancelled , finished and expired orders which can be compared with different kind of mail filters we have in gmail app like inbox , outbox , drafts , social etc.
+\item Instead of using a map and choosing a deliverer at the time of placing the order, we created a list of all pending orders, just like unread mails in \textbf{google mail\cite{c6}}. This method also reduces our dependency on google apis which are costly.
+\item We also have filters for pending , active , cancelled , finished and expired orders which can be compared with different kind of mail filters we have in gmail\cite{c6} app like inbox , outbox , drafts , social etc.
 \item So now every newly placed order will be placed in the list of pending orders which is a global list visible to all the users using our app as a deliverer.
 \item All deliverers can check the details of your order, and the deliverers who are interested in delivering your order will \textbf{Accept} your order and will deliver it to you.
 \item You will be notified of  as soon as someone \textbf{Accepts} your order.
@@ -707,19 +719,19 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.26\textwidth}
 \centering
 \includegraphics[width=4.2cm]{login.jpg}
-\caption{\centering \tiny Login screen using E-Mail \& Password}
+\caption{\centering Login screen using E-Mail \& Password}
 \end{subfigure}
 \begin{subfigure}[b]{.26\textwidth}
 \centering
 \includegraphics[width=4.2cm]{google_signin.jpg}
-\caption{\centering \tiny Reset Password screen}
+\caption{\centering Reset Password screen}
 \end{subfigure}
 \begin{subfigure}[b]{.26\textwidth}
 \centering
 \includegraphics[width=4.2cm]{forgot_password.jpg}
-\caption{\centering \tiny Forgot password screen}
+\caption{\centering Forgot password screen}
 \end{subfigure}
-\caption{\tiny Login Screen and Password Reset} 
+\caption{Login Screen and Password Reset} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -741,14 +753,14 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{signup.jpg}
-\caption{\centering \tiny User Registration form}
+\caption{\centering User Registration form}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{verify_email.jpg}
-\caption{\centering \tiny E-Mail verification Mail}
+\caption{\centering E-Mail verification Mail}
 \end{subfigure}
-\caption{\tiny Registration screen and E-Mail verification mail} 
+\caption{Registration screen and E-Mail verification mail} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -774,19 +786,19 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{main_screen.jpg}
-\caption{\centering \tiny Usage mode screen}
+\caption{\centering Usage mode screen}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{location_permission.jpg}
-\caption{\centering \tiny GPS Location permission}
+\caption{\centering GPS Location permission}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{shopper_view.jpg}
-\caption{\centering \tiny Shopper view showing Active \& Pending orders}
+\caption{\centering Shopper view showing Active \& Pending orders}
 \end{subfigure}
-\caption{\tiny Usage mode screen and Shopper view screen} 
+\caption{Usage mode screen and Shopper view screen} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -813,19 +825,19 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{order_detail1.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering Order detail view}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{order_detail2.jpg}
-\caption{\centering \tiny Order detail view}
+\caption{\centering Order detail view}
 \end{subfigure}
 \begin{subfigure}[b]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{shopper_drawer.jpg}
-\caption{\centering \tiny Shopper Navigation}
+\caption{\centering Shopper Navigation}
 \end{subfigure}
-\caption{\tiny Shopper order Detail view and Shopper Navigation drawer} 
+\caption{Shopper order Detail view and Shopper Navigation drawer} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -846,35 +858,35 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{empty_form.jpg}
-\caption{\centering \tiny New Order form}
+\caption{\centering New Order form}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{categories.jpg}
-\caption{\centering \tiny Choosing the Category for order}
+\caption{\centering Choosing the Category for order}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{place_picker.jpg}
-\caption{\centering \tiny Setting the delivery location for order}
+\caption{\centering Setting the delivery location for order}
 \end{subfigure}
 
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{place.jpg}
-\caption{\centering \tiny COnfirming the delivery location for order}
+\caption{\centering COnfirming the delivery location for order}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{filled_form.jpg}
-\caption{\centering \tiny Filled form}
+\caption{\centering Filled form}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{pay.jpg}
-\caption{\centering \tiny Order Price display using Bottomsheet}
+\caption{\centering Order Price display using Bottomsheet}
 \end{subfigure}
-\caption{\tiny Placing new order} 
+\caption{Placing new order} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -883,30 +895,30 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{paytm_start.jpg}
-\caption{\centering \tiny Login to Paytm to pay}
+\caption{\centering Login to Paytm to pay}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{mobile_number.jpg}
-\caption{\centering \tiny Enter the staging mobile no.}
+\caption{\centering Enter the staging mobile no.}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{paytm_otp.jpg}
-\caption{\centering \tiny Enter the staging OTP}
+\caption{\centering Enter the staging OTP}
 \end{subfigure}
 
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{paytm_pay.jpg}
-\caption{\centering \tiny Paying for the order using Paytm wallet}
+\caption{\centering Paying for the order using Paytm wallet}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{edit_order.jpg}
-\caption{\centering \tiny Edit order form}
+\caption{\centering Edit order form}
 \end{subfigure}
-\caption{\tiny Payment of order and Editing of order} 
+\caption{Payment of order and Editing of order} 
 \label{fig:NASA_Logo}
 \end{figure}
 \pagebreak
@@ -934,24 +946,24 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{deliverer_view.jpg}
-\caption{\centering \tiny Deliverer order view}
+\caption{\centering Deliverer order view}
 \end{subfigure}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{deliverer_drawer.jpg}
-\caption{\centering \tiny Deliverer Navigation drawer}
+\caption{\centering Deliverer Navigation drawer}
 \end{subfigure}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{pending_orders.jpg}
-\caption{\centering \tiny Pending orders}
+\caption{\centering Pending orders}
 \end{subfigure}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{finished_deliverer.jpg}
-\caption{\centering \tiny Finished orders}
+\caption{\centering Finished orders}
 \end{subfigure}
-\caption{\tiny Deliverer view} 
+\caption{ Deliverer view} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -973,24 +985,24 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{deliverer_order_detail1.jpg}
-\caption{\centering \tiny Deliverer Order detail view}
+\caption{\centering Deliverer Order detail view}
 \end{subfigure}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{deliverer_order_detail2.jpg}
-\caption{\centering \tiny Deliverer Order detail view}
+\caption{\centering Deliverer Order detail view}
 \end{subfigure}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{show_path.jpg}
-\caption{\centering \tiny Show Path functionality using Google Maps}
+\caption{\centering Show Path functionality using Google Maps}
 \end{subfigure}
 \begin{subfigure}[h!]{.24\textwidth}
 \centering
 \includegraphics[width=4cm]{order_accepted.jpg}
-\caption{\centering \tiny Accepting an order by touching the Accept button}
+\caption{\centering Accepting an order by touching the Accept button}
 \end{subfigure}
-\caption{\tiny Accepting an order} 
+\caption{Accepting an order} 
 \label{fig:NASA_Logo}
 \end{figure}
 
@@ -1008,26 +1020,27 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{send_otp.jpg}
-\caption{\centering \tiny Sending OTP to Shopper after entering the Actual price of order}
+\caption{\centering Sending OTP to Shopper after entering the Actual price of order}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{mark_delivered.jpg}
-\caption{\centering \tiny Entering the OTP as received from Shopper to finish Delivery}
+\caption{\centering Entering the OTP as received from Shopper to finish Delivery}
 \end{subfigure}
 \begin{subfigure}[h!]{.3\textwidth}
 \centering
 \includegraphics[width=5cm]{delivery_finished.jpg}
-\caption{\centering \tiny Message confirming the Finishing of Delivery of order}
+\caption{\centering Message confirming the Finishing of Delivery of order}
 \end{subfigure}
-\caption{\tiny Completing the Delivery of an order} 
+\caption{Completing the Delivery of an order} 
 \label{fig:NASA_Logo}
 \end{figure}
 
 %----------------------------------------------------------------
 
 \chapter{Technology used}
-
+\bigskip
+\bigskip
 \begin{itemize}[label=$\diamond$]
 \item Softwares :
 \begin{itemize}[label=$\rightarrow$]
@@ -1066,20 +1079,28 @@ This list of pending orders is implemented using \textbf{Recycler View of cards}
 
 %---------------------------------------------
 \chapter{Business Model}
-Our application can be used as a Business application or it can be used among friends for their logistic and shopping  needs.
+\bigskip
+\bigskip
+\bigskip
+ Our application can be used as a Business application or it can be used among friends for their logistic and shopping  needs.\\
 
-As a business plan we are charging shoppers some delivery charge for the service we provide. The deliverer gets some incentive for delivering the order.
+As a business plan we are charging shoppers some delivery charge for the service we provide. The deliverer gets some incentive for delivering the order.\\
 
-The delivery charge can be shared between us and the delivery person. When we find less deliverers are willing to use our app, we may increase their incentive to make up for the number of deliverers. 
+The delivery charge can be shared between us and the delivery person. When we find less deliverers are willing to use our app, we may increase their incentive to make up for the number of deliverers. \\
 
-Also, we initially planned to launch this app in our college. We didn\textquotesingle t do so due to time constraints and some other reasons.
+Also, we initially planned to launch this app in our college. We didn\textquotesingle t do so due to time constraints and some other reasons.\\
 
-For more smooth functioning of our application we may collaborate with third party delivery services.
+For more smooth functioning of our application we may collaborate with third party delivery services.\\
 
-We will discuss more business opportunities in future work section of our report.
+We will discuss more business opportunities in future work section of our report.\\
 
 
 \chapter{Current status of Project}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
 Currently all the basic features mentioned in this report are working properly.\\
 
 We have tested our application for various scenarios like
@@ -1096,11 +1117,16 @@ To get a genuine merchant id , we need to register a company name.
 
 
 \chapter{Future scope}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
 While discussing Use case section of Software requirement Specification (SRS) of our project , we told about some use cases which can be thought of .
 We may modify our application to suit specific needs.\\
 
 Example of few such use cases :-
-\begin{enumerate}[label=\Roman*]
+\begin{enumerate}[label=(\roman*.)]
 \item Partnering with local shops and having centralised system of delivery between the shop and its customers. 
 \item Having listing of shops and using the application to buy goods from shops.
 \item Partnering with restaurants for booking tables or ordering food items from their menu.
@@ -1117,7 +1143,7 @@ Our app has two modes of usage namely Shopper and Deliverer and corresponding tw
 \item Choose Shopper mode.
 \item Click on the floating action button (`+').
 \item Fill all the details.
-\item Add location from the map. (uses google place picker api).
+\item Add location from the map. (uses google place picker\cite{c14} api).
 \item Add expiry date and expiry time\footnotemark.
 \item Click proceed button after you have completed.
 \item A bottom sheet appears which calculates and shows delivery charge.
@@ -1205,20 +1231,32 @@ All the data is stored as JSON (JavaScript Object Notation) tree.
 JSON is built on two universal data structures:
 \begin{itemize}
 \item A collection of name/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
-\item An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+\item An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence\cite{c1}.
 \end{itemize}
+
+
+\begin{figure}[h!]
+\includegraphics[width=14cm]{overall_tree.png}
+\caption{Our database JSON tree}
+\label{fig:NASA_Logo}
+\end{figure}
+
+\begin{figure}[h!]
+\includegraphics[width=16cm]{user.png}
+\caption{Structure of a user in our database}
+\label{fig:NASA_Logo}
+\end{figure}
+
+\begin{figure}[h!]
+\includegraphics[width=18cm]{order.png}
+\caption{Structure of an order in our database}
+\label{fig:NASA_Logo}
+\end{figure}
+
+
 %---------------------------------------------------------------------------------------------------
-\begin{comment}
-\chapter{Future Work}
-\begin{enumerate}[label=\arabic*)]
-\item Cleaning of datasets and preparing it for training and testing of our model.
-\item Implementing proposed algorithm(SFA) and building our model with help of it.
-\item Calculation of accuracy and selection of appropriate hyper parameters for optimal results.
-\item Comparing our results with results of conventional methods used for cross domain sentimental analysis(e.g. Use of CNN).
-\end{enumerate}
-\end{comment}
 
 
 \bibliographystyle{IEEEtran}
-\bibliography{references}
+\bibliography{./references}
 \end{document}
