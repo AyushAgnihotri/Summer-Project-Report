@@ -94,16 +94,16 @@
  top=20mm,
  }
 
-\renewcommand\thesection{\arabic{section}}
+%\renewcommand\thesection{\arabic{section}}
 \titlecontents{chapter}[1.05em]{\bigskip}%
-{\contentslabel[\MakeUppercase{\romannumeral\thecontentslabel}]{1em}\enspace\textsc}%numbered\contentslabel
+{\contentslabel[\MakeUppercase{\thecontentslabel}]{1em}\enspace\textsc}%numbered\contentslabel
 {\hspace*{-1em}\textsc}%numberless
 {\hfill\contentspage}%
 %
-\titlecontents{section}[1.6em]{\bigskip}%
-{\thecontentslabel.\enspace}%numbered
+%\titlecontents{section}[1.6em]{\bigskip}%
+%{\thecontentslabel.\enspace}%numbered
 {}%numberless
-{\titlerule*[1pc]{.}\contentspage}%
+%{\titlerule*[1pc]{.}\contentspage}%
 
 \setcounter{tocdepth}{6}
 
@@ -144,7 +144,7 @@
 	\vspace{0.1\textheight}
 		
 	\textcolor{Red}{ 
-		{\fontsize{35}{42}\selectfont DeliveryMates}\\[0.5\baselineskip]
+		{\fontsize{35}{42}\selectfont Social Delivery}\\[0.5\baselineskip]
 	}
 	
 	\vspace{0.185\textheight} 
@@ -196,7 +196,7 @@
 {\chapter*{ \quad \quad \quad \quad \quad \quad  \Huge \scshape \underline {Declaration} }
 \vspace{2.0cm}
 \begin{spacing}{0.3}
-\fontsize{17}{68}\selectfont\linespread{10} {We hereby declare that the work presented in this project report entitled \textbf{``DeliveryMates''},  submitted towards progress of summer project report of Dual Degree(IT) at \textbf{Indian Institute of Information Technology, Allahabad}, is an authenticated record of our original work carried out from \textbf{May 2018} to \textbf{present} under the guidance of \textbf{Dr. Jagpreet Singh}. Due acknowledgements have been made in the text to all other material used. The project was done in full compliance with the requirements and constraints of the prescribed curriculum.}
+\fontsize{17}{68}\selectfont\linespread{10} {We hereby declare that the work presented in this project report entitled \textbf{``Social Delivery''},  submitted towards progress of summer project report of Dual Degree(IT) at \textbf{Indian Institute of Information Technology, Allahabad}, is an authenticated record of our original work carried out from \textbf{May 2018} to \textbf{present} under the guidance of \textbf{Dr. Jagpreet Singh}. Due acknowledgements have been made in the text to all other material used. The project was done in full compliance with the requirements and constraints of the prescribed curriculum.}
 \end{spacing}
 \vspace{5cm}
 \Large
@@ -233,7 +233,7 @@
 }
 
 %-----------------------------------------------------------------------------------------
-\title{\Huge  DeliveryMates\linebreak}
+\title{\Huge  Social Delivery\linebreak}
 \date{}
 \maketitle
 \setlength{\columnsep}{0.7cm}
@@ -301,18 +301,18 @@ Both sections of the document describe the same software product in its entirety
 \section{Overall Description}
 \subsection{Product perspective}
 
-\begin{enumerate}[label=\alph*)]
+\begin{itemize}[label=$\circ$]
 \item This app is an Android based application designed on \textbf{Android Studio} platform.
 \item It uses \textbf{Google Firebase} Database which is a NoSQL Real-time cloud-hosted Database. We store the profiles of all users and all the data of the orders placed by them in a JSON tree. 
 \item It uses \textbf{Google Places API} to set the delivery location of an order and \textbf{Google maps} to help the Deliverers to reach the delivery location by showing them the path. 
 \item Our app also uses \textbf{GPS Location} to find the current city of the user. 
 \item Notification alerts are also sent to users on every status change of their orders using the \textbf{One Signal API}. The One Signal API  is an open source service which uses \textbf{Google Cloud Messaging(GCM)} in its backend.
-\end{enumerate}
+\end{itemize}
 
 \subsection{Product features}
 
 For Users using our app as Shopper :
-\begin{enumerate}[label=\alph*)]
+\begin{itemize}[label=$\circ$]
 \item Place a new order.
 \item Edit existing pending orders.
 \item Filter the orders according to status like All, Active, Pending, Finished, Cancelled, Expired.
@@ -320,10 +320,10 @@ For Users using our app as Shopper :
 \item Check the details of the deliverer who have accepted his/her order.
 \item Switch to deliverer view.
 \item Sign-out from the app.
-\end{enumerate}
+\end{itemize}
 
 For Users using our app as Deliverer:
-\begin{enumerate}[label=\alph*)]
+\begin{itemize}[label=$\diamond$]
 \item Accept a pending order out of a list of all pending orders from his city location.
 \item Reject an accepted order.
 \item See the path to reach the delivery location for an order.
@@ -333,7 +333,7 @@ For Users using our app as Deliverer:
 \item Complete the delivery of an accepted order by OTP verification. 
 \item Switch to shopper view.
 \item Sign-out from the app.
-\end{enumerate}
+\end{itemize}
 
 \subsection{User characteristics}
 \begin{itemize}
@@ -341,7 +341,7 @@ For Users using our app as Deliverer:
 \end{itemize}
 
 For Users using our app as Shopper:
-\begin{itemize}
+\begin{itemize}[label=$\diamond$]
 \item The user must know how to use pick places from a google maps.
 \item The description of the orders should be as clear as possible.
 \item The estimated price range of order should be given as close as possible to the real price.
@@ -351,7 +351,7 @@ For Users using our app as Shopper:
 \end{itemize}
 
 For Users using our app as Deliverer:
-\begin{itemize}
+\begin{itemize}[label=$\diamond$]
 \item The user should know how to use Google maps app.
 \item The user must know how basic OTP verification process works.
 \item Users using our app as Deliverers should choose wisely what orders they can deliver.
@@ -432,7 +432,7 @@ For Users using our app as Deliverer:
 \item PROCESS : Use Firebase Authentication functions.
 \end{description}
 
-\noindent \newline {Module-7 :} Place a new order
+\noindent \newline {\textbf{Module-7 :}} Place a new order
 \begin{description}
 \item AIM : User can place a new order when using our app as Shopper by filling a form.
 \item INPUT : Description or order, Category, Estimated price range minimum and maximum values, Expiry Date and Time of order(optional) and delivery location.
@@ -637,7 +637,7 @@ Example of few such use cases :-
 \item Having listing of shops and using the application to buy goods from shops.
 \item Partnering with restaurants for booking tables or ordering food items from their menu.
 \end{enumerate}
-%---------------------------------------------
+%--------------------------------------------------------------------------
 
 \chapter{Application Design}
 \section{Software Architecture}
@@ -862,8 +862,67 @@ Example of few such use cases :-
 
 \end{enumerate}
 
+\chapter{How to use our App}
+Here we present a simple and summarised way on how to use our app.
+Our app has two modes of usage namely Shopper and Deliverer and corresponding two main functionalities namely Place an order and Deliver an order.
+    Below we give summarised steps on how to execute these two main functionalities.
 
+\section{Place an order}
+\begin{itemize}[label=$\rightarrow$]
+\item Choose Shopper mode.
+\item Click on the floating action button (`+').
+\item Fill all the details.
+\item Add location from the map. (uses google place picker api).
+\item Add expiry date and expiry time\footnotemark.
+\item Click proceed button after you have completed.
+\item A bottom sheet appears which calculates and shows delivery charge.
+\item After that you need to pay for the order using Paytm wallet\footnotemark.
+\item You will be prompted to login into Paytm. (Don\textquotesingle t login into you real Paytm account instead use test credentials provided by us).
+\begin{description}
+\item Mobile No. \quad -- \quad7777777777
+\item OTP \quad \quad \quad \quad-- \quad489871\\
+\item Few things to note :-
+\begin{itemize}[label=$\diamond$]
+\item You can left swipe to cancel this order.
+\item You can undo the cancel operations within 3 seconds.
+\end{itemize}
+\end{description}
+\item When payment is complete you will be redirected back to User Screen.
+\item You can see your order on the screen.
+\end{itemize}
+
+\footnotetext[1]{You order expires as soon as clock hits the expiry time and date. No deliverer will be able to see an expired order.}
+\footnotetext[2]{Right now we are in sandbox mode, we have a demo merchant id.}
+
+\subsection{Circle Notation :}
+\begin{itemize}[label=$\circ$]
+\item P - pending orders
+\item A - active orders
+\item F - Finished orders
+\item C - Cancelled orders
+\item E - Expired Orders 
+\end{itemize}
+These all type of orders can be accessed via filters in navigation bar.
+
+\section{Deliver an order}
+\begin{itemize}[label=$\rightarrow$]
+\item Choose Deliverer mode.
+\item You will see various pending orders on your screen.
+\item Open the order you are interested to deliver.
+\item Accept the order. (A notification goes to customer associated with that order)
+\item You may also reject, if you change your mind. (Again, a notification goes to user)
+\item A bright green button named COMPLETE ORDER appears on the order detail page of the order you accepted.
+\item After you purchase the item press the bright green COMPLETE ORDER button.
+\item You will be asked to enter actual price of item you bought (excluding delivery charges).
+\item You press a send OTP button.
+\item Enter the OTP provided by user to finish the order.
+
+\end{itemize}
 %---------------------------------------------------------------------------------------------------
+
+\chapter{About Database}
+
+
 
 %---------------------------------------------------------------------------------------------------
 \begin{comment}
